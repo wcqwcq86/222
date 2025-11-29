@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伍纯去 - 聊天室</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- 左侧边栏 - 在线用户列表 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>在线用户</h3>
+                <div id="online-count" class="online-count">0 人</div>
+            </div>
+            <div class="user-list" id="user-list">
+                <!-- 在线用户将通过JavaScript动态加载 -->
+                <div class="loading">正在加载用户列表...</div>
+            </div>
+            <button id="logout-btn" class="logout-btn">退出聊天室</button>
+        </div>
+        
+        <!-- 主聊天区域 -->
+        <div class="chat-main">
+            <div class="chat-header">
+                <h2>伍纯去聊天室</h2>
+                <div id="current-user" class="current-user">
+                    <span class="status-indicator"></span>
+                    <span class="username">游客</span>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <!-- 聊天消息将通过JavaScript动态加载 -->
+                <div class="system-message">正在连接服务器...</div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="input-toolbar">
+                    <button id="emoji-btn" class="toolbar-btn" title="表情">😀</button>
+                    <button id="clear-btn" class="toolbar-btn" title="清除聊天">🗑️</button>
+                </div>
+                <input 
+                    type="text" 
+                    id="message-input" 
+                    placeholder="输入消息，使用@可以@用户..." 
+                    maxlength="500"
+                >
+                <button id="send-btn" class="send-btn">发送</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 表情选择器弹窗 -->
+    <div id="emoji-picker" class="emoji-picker">
+        <div class="emoji-grid">
+            <!-- 常用表情 -->
+            😀 😃 😄 😁 😆 😅 🤣 😂 🙂 🙃 😉 😊 😇 🥰 😍 🤩 😘 😗 😙 😚
+            😋 😛 😜 🤪 😝 🤑 🤗 🤭 🤫 🤔 🤐 🤨 😐 😑 😶 🙄 😏 😒 😬
+            🤥 😌 😔 😪 🤤 😴 😷 🤒 🤕 🤑 🤓 😎 🧐 🤠 😕 😟 🙁 ☹️ 😮
+            😯 😲 😳 🥺 😦 😧 😨 😰 😥 😢 😭 😱 😖 😣 😞 😓 😩 😫 🥱
+        </div>
+    </div>
+    
+    <script src="js/chat.js"></script>
+</body>
+</html>
